@@ -1,6 +1,6 @@
 .PHONY: install test demo run-cli run-api docker-build docker-up lint clean
 
-PYTHON      := python
+PYTHON      := python3
 PIP         := $(PYTHON) -m pip
 PYTEST      := $(PYTHON) -m pytest
 DEMO_REPO   := /tmp/guide-demo-repo
