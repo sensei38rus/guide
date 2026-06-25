@@ -10,9 +10,9 @@ DEMO_REPO   := /tmp/guide-demo-repo
 # ─────────────────────────────────────────────────────────────────────────────
 
 install:  ## Install Guide and dev dependencies, then install hooks in this repo
-	$(PIP) install --break-system-packages -e ".[dev]" --quiet
+	$(PIP) install --break-system-packages -e ".[dev]" 
 	@echo ""
-	@bash scripts/install_hooks.sh .
+	
 
 # ─────────────────────────────────────────────────────────────────────────────
 # Tests
