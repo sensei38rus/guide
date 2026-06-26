@@ -1,0 +1,53 @@
+# Guide — default configuration
+# Override individual keys in guide.course-example.yaml or via env vars.
+
+commit_message:
+  # Conventional Commits pattern: type(scope): description
+  require_conventional: true
+  min_description_length: 10
+  # Messages matching any of these are flagged as too generic
+  blocked_patterns:
+    - "^fix$"
+    - "^wip$"
+    - "^changes$"
+    - "^update$"
+    - "^minor$"
+    - "^temp$"
+    - "^done$"
+    - "^test$"
+    - "^commit$"
+
+diff:
+  # Lines added + removed above this threshold trigger a warning
+  max_lines: 200
+  # Number of files above which a warning is also shown
+  max_files: 15
+  # Total lines across all commits in a push (default: 3x single-commit threshold)
+  max_push_lines: 600
+
+tests_signal:
+  # If no test-related files or keywords are found, warn the user
+  require_signal: true
+  # Keywords in commit message body that count as explicit "no tests" explanation
+  no_tests_keywords:
+    - "no tests"
+    - "not testable"
+    - "manual test"
+    - "tested manually"
+    - "docs only"
+    - "config only"
+
+rationale:
+  # Require a body line explaining the decision (second paragraph or task ref)
+  require: false
+  min_body_length: 15
+
+strictness:
+  # warn  — print message, allow the action to continue
+  # block — print message, exit with code 1 (action is stopped)
+  default_level: warn
+  # After N consecutive successful checks, reduce hints for that check
+  adaptive_threshold: 5
+
+mock_mode: true
+evidence_sink: file
