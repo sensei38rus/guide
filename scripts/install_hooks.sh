@@ -45,7 +45,7 @@ install_hook() {
 # installed-by: guide
 # Do not edit — regenerate with: make install
 
-exec python -m $python_module "\$@"
+exec python3 -m $python_module "\$@"
 HOOK_SCRIPT
 
   chmod +x "$target"
